@@ -92,7 +92,7 @@ export default class Testogram {
         isFavorite: false,
       };
     }
-    const api = new API('https://diploma-kxrxll.herokuapp.com/favorite');
+    const api = new API('https://ahj44-server-evgeniy-loznevoy.herokuapp.com/favorite');
     const response = await api.send(message);
     if (response.status === 200 && response.ok) {
       this.textInput.value = '';
@@ -121,7 +121,7 @@ export default class Testogram {
         message: this.textInput.value,
       };
     }
-    const api = new API('https://diploma-kxrxll.herokuapp.com/newmessage');
+    const api = new API('https://ahj44-server-evgeniy-loznevoy.herokuapp.com/newmessage');
     const response = await api.send(message);
     if (response.status === 200 && response.ok) {
       this.textInput.value = '';
@@ -136,7 +136,7 @@ export default class Testogram {
     const file = this.attachForm.querySelector('input').files[0];
     const data = new FormData();
     data.append('file', file);
-    const api = new API('https://diploma-kxrxll.herokuapp.com/download');
+    const api = new API('https://ahj44-server-evgeniy-loznevoy.herokuapp.com/download');
     const response = await api.put(data);
     if (response.status === 200 && response.ok) {
       await console.log(response);
@@ -176,7 +176,7 @@ export default class Testogram {
       message: geo,
       favorite: false,
     };
-    const api = new API('https://diploma-kxrxll.herokuapp.com/newmessage');
+    const api = new API('https://ahj44-server-evgeniy-loznevoy.herokuapp.com/newmessage');
     const response = await api.send(message);
     if (response.status === 200 && response.ok) {
       this.textInput.value = '';
@@ -192,7 +192,7 @@ export default class Testogram {
     const message = {
       str: this.searchInput.value,
     };
-    const api = new API('https://diploma-kxrxll.herokuapp.com/search');
+    const api = new API('https://ahj44-server-evgeniy-loznevoy.herokuapp.com/search');
     const response = await api.send(message);
     if (response.status === 200 && response.ok) {
       const parsedResponse = await response.json();
